@@ -10,18 +10,18 @@ import (
 // 获取 url 应用升级内容
 func TestGetUrlUpgrade(t *testing.T) {
 
-	accessKeyId := "accessKeyId"
-	accessKeySecret := "accessKeySecret"
+	accessKeyId := "mui2W50H1j-OC4xD6PgQag"
+	accessKeySecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
 	Client, err := client.NewClient(&accessKeyId, &accessKeySecret)
 	if err != nil {
 		return
 	}
 
-	urlKey := "urlkey1"
+	urlKey := "uJ47NPeT7qjLa11gL3sVHqw"
 	versionCode := 1
 	appointVersionCode := 0
-	devModelKey := "tv1"
-	devKey := "macmacmacmac"
+	devModelKey := "android.os.Build.MODEL"
+	devKey := "android.os.Build.FINGERPRINT"
 
 	// 接口调用
 	request := &client.UrlUpgradeRequest{

@@ -10,9 +10,11 @@ import (
 // 获取 url 应用升级内容
 func TestGetUrlUpgrade(t *testing.T) {
 
-	accessKeyId := "mui2W50H1j-OC4xD6PgQag"
-	accessKeySecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
-	Client, err := client.NewClient(&accessKeyId, &accessKeySecret)
+	var config = client.Config{}
+	config.SetAccessKeyId("mui2W50H1j-OC4xD6PgQag")
+	config.SetAccessKeySecret("PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc")
+
+	Client, err := client.NewClient(&config)
 	if err != nil {
 		return
 	}
@@ -43,9 +45,15 @@ func TestGetUrlUpgrade(t *testing.T) {
 // 获取 file 应用升级内容
 func TestGetFileUpgrade(t *testing.T) {
 
-	accessKeyId := "accessKeyId"
-	accessKeySecret := "accessKeySecret"
-	Client, err := client.NewClient(&accessKeyId, &accessKeySecret)
+	accessKeyId := "mui2W50H1j-OC4xD6PgQag"
+	accessKeySecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
+
+	var congfig = client.Config{
+		AccessKeyId:     &accessKeyId,
+		AccessKeySecret: &accessKeySecret,
+	}
+
+	Client, err := client.NewClient(&congfig)
 	if err != nil {
 		return
 	}

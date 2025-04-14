@@ -7,6 +7,41 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type Config struct {
+  AccessKeyId *string `json:"accessKeyId,omitempty" xml:"accessKeyId,omitempty" require:"true"`
+  AccessKeySecret *string `json:"accessKeySecret,omitempty" xml:"accessKeySecret,omitempty" require:"true"`
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  Endpoint *string `json:"endpoint,omitempty" xml:"endpoint,omitempty" require:"true"`
+}
+
+func (s Config) String() string {
+  return tea.Prettify(s)
+}
+
+func (s Config) GoString() string {
+  return s.String()
+}
+
+func (s *Config) SetAccessKeyId(v string) *Config {
+  s.AccessKeyId = &v
+  return s
+}
+
+func (s *Config) SetAccessKeySecret(v string) *Config {
+  s.AccessKeySecret = &v
+  return s
+}
+
+func (s *Config) SetProtocol(v string) *Config {
+  s.Protocol = &v
+  return s
+}
+
+func (s *Config) SetEndpoint(v string) *Config {
+  s.Endpoint = &v
+  return s
+}
+
 type UrlUpgradeRequest struct {
   UrlKey *string `json:"urlKey,omitempty" xml:"urlKey,omitempty" require:"true"`
   VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
@@ -257,21 +292,33 @@ type ClientInterface interface {
 }
 
 type Client struct {
-  Endpoint  *string
   AccessKeyId  *string
   AccessKeySecret  *string
+  Protocol  *string
+  Endpoint  *string
 }
 
-func NewClient(accessKeyId *string, accessKeySecret *string)(*Client, error) {
+func NewClient(config *Config)(*Client, error) {
   client := new(Client)
-  err := client.Init(accessKeyId, accessKeySecret)
+  err := client.Init(config)
   return client, err
 }
 
-func (client *Client)Init(accessKeyId *string, accessKeySecret *string)(_err error) {
-  client.Endpoint = tea.String("api.upgrade.toolsetlink.com")
-  client.AccessKeyId = accessKeyId
-  client.AccessKeySecret = accessKeySecret
+func (client *Client)Init(config *Config)(_err error) {
+  client.AccessKeyId = config.AccessKeyId
+  client.AccessKeySecret = config.AccessKeySecret
+  if tea.BoolValue(util.EqualString(config.Protocol, tea.String("HTTPS"))) {
+    client.Protocol = tea.String("HTTPS")
+  } else {
+    client.Protocol = tea.String("HTTP")
+  }
+
+  if tea.BoolValue(util.Empty(config.Endpoint)) {
+    client.Endpoint = tea.String("api.upgrade.toolsetlink.com")
+  } else {
+    client.Endpoint = config.Endpoint
+  }
+
   return nil
 }
 

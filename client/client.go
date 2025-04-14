@@ -354,7 +354,7 @@ func (client *Client) GetUrlUpgrade(request *UrlUpgradeRequest) (_result *UrlUpg
       accessKeyId := client.AccessKeyId
       // 生成签名
       signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri)
-      request_.Protocol = tea.String("HTTP")
+      request_.Protocol = client.Protocol
       request_.Method = tea.String("POST")
       request_.Pathname = tea.String("/v1/url/upgrade")
       request_.Headers = map[string]*string{
@@ -433,7 +433,7 @@ func (client *Client) GetFileUpgrade(request *FileUpgradeRequest) (_result *File
       accessKeyId := client.AccessKeyId
       // 生成签名
       signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri)
-      request_.Protocol = tea.String("HTTP")
+      request_.Protocol = client.Protocol
       request_.Method = tea.String("POST")
       request_.Pathname = tea.String("/v1/file/upgrade")
       request_.Headers = map[string]*string{

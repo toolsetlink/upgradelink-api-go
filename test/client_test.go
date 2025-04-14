@@ -11,8 +11,8 @@ import (
 func TestGetUrlUpgrade(t *testing.T) {
 
 	var config = client.Config{}
-	config.SetAccessKeyId("mui2W50H1j-OC4xD6PgQag")
-	config.SetAccessKeySecret("PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc")
+	config.SetAccessKey("mui2W50H1j-OC4xD6PgQag")
+	config.SetAccessSecret("PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc")
 
 	Client, err := client.NewClient(&config)
 	if err != nil {
@@ -45,15 +45,15 @@ func TestGetUrlUpgrade(t *testing.T) {
 // 获取 file 应用升级内容
 func TestGetFileUpgrade(t *testing.T) {
 
-	accessKeyId := "mui2W50H1j-OC4xD6PgQag"
-	accessKeySecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
+	accessKey := "mui2W50H1j-OC4xD6PgQag"
+	accessSecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
 
-	var congfig = client.Config{
-		AccessKeyId:     &accessKeyId,
-		AccessKeySecret: &accessKeySecret,
+	var config = client.Config{
+		AccessKey:    &accessKey,
+		AccessSecret: &accessSecret,
 	}
 
-	Client, err := client.NewClient(&congfig)
+	Client, err := client.NewClient(&config)
 	if err != nil {
 		return
 	}

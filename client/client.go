@@ -8,8 +8,8 @@ import (
 )
 
 type Config struct {
-  AccessKeyId *string `json:"accessKeyId,omitempty" xml:"accessKeyId,omitempty" require:"true"`
-  AccessKeySecret *string `json:"accessKeySecret,omitempty" xml:"accessKeySecret,omitempty" require:"true"`
+  AccessKey *string `json:"accessKey,omitempty" xml:"accessKey,omitempty" require:"true"`
+  AccessSecret *string `json:"accessSecret,omitempty" xml:"accessSecret,omitempty" require:"true"`
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
   Endpoint *string `json:"endpoint,omitempty" xml:"endpoint,omitempty" require:"true"`
 }
@@ -22,13 +22,13 @@ func (s Config) GoString() string {
   return s.String()
 }
 
-func (s *Config) SetAccessKeyId(v string) *Config {
-  s.AccessKeyId = &v
+func (s *Config) SetAccessKey(v string) *Config {
+  s.AccessKey = &v
   return s
 }
 
-func (s *Config) SetAccessKeySecret(v string) *Config {
-  s.AccessKeySecret = &v
+func (s *Config) SetAccessSecret(v string) *Config {
+  s.AccessSecret = &v
   return s
 }
 
@@ -292,8 +292,8 @@ type ClientInterface interface {
 }
 
 type Client struct {
-  AccessKeyId  *string
-  AccessKeySecret  *string
+  AccessKey  *string
+  AccessSecret  *string
   Protocol  *string
   Endpoint  *string
 }
@@ -305,8 +305,8 @@ func NewClient(config *Config)(*Client, error) {
 }
 
 func (client *Client)Init(config *Config)(_err error) {
-  client.AccessKeyId = config.AccessKeyId
-  client.AccessKeySecret = config.AccessKeySecret
+  client.AccessKey = config.AccessKey
+  client.AccessSecret = config.AccessSecret
   if tea.BoolValue(util.EqualString(config.Protocol, tea.String("HTTPS"))) {
     client.Protocol = tea.String("HTTPS")
   } else {
@@ -350,20 +350,20 @@ func (client *Client) GetUrlUpgrade(request *UrlUpgradeRequest) (_result *UrlUpg
       timestamp := darabonbabase.TimeRFC3339()
       nonce := darabonbabase.GenerateNonce()
       uri := tea.String("/v1/url/upgrade")
-      accessKeySecret := client.AccessKeySecret
-      accessKeyId := client.AccessKeyId
+      accessKey := client.AccessKey
+      accessSecret := client.AccessSecret
       // 生成签名
-      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri)
+      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessSecret, timestamp, uri)
       request_.Protocol = client.Protocol
       request_.Method = tea.String("POST")
       request_.Pathname = tea.String("/v1/url/upgrade")
       request_.Headers = map[string]*string{
         "host": client.Endpoint,
         "content-type": tea.String("application/json"),
-        "x-timestamp": timestamp,
-        "x-nonce": nonce,
-        "x-accesskey": accessKeyId,
-        "x-signature": signature,
+        "x-Timestamp": timestamp,
+        "x-Nonce": nonce,
+        "x-AccessKey": accessKey,
+        "x-Signature": signature,
       }
       request_.Body = tea.ToReader(bodyStr)
       response_, _err := tea.DoRequest(request_, _runtime)
@@ -429,20 +429,20 @@ func (client *Client) GetFileUpgrade(request *FileUpgradeRequest) (_result *File
       timestamp := darabonbabase.TimeRFC3339()
       nonce := darabonbabase.GenerateNonce()
       uri := tea.String("/v1/file/upgrade")
-      accessKeySecret := client.AccessKeySecret
-      accessKeyId := client.AccessKeyId
+      accessKey := client.AccessKey
+      accessSecret := client.AccessSecret
       // 生成签名
-      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri)
+      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessSecret, timestamp, uri)
       request_.Protocol = client.Protocol
       request_.Method = tea.String("POST")
       request_.Pathname = tea.String("/v1/file/upgrade")
       request_.Headers = map[string]*string{
         "host": client.Endpoint,
         "content-type": tea.String("application/json"),
-        "x-timestamp": timestamp,
-        "x-nonce": nonce,
-        "x-accesskey": accessKeyId,
-        "x-signature": signature,
+        "x-Timestamp": timestamp,
+        "x-Nonce": nonce,
+        "x-AccessKey": accessKey,
+        "x-Signature": signature,
       }
       request_.Body = tea.ToReader(bodyStr)
       response_, _err := tea.DoRequest(request_, _runtime)

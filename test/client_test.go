@@ -22,8 +22,8 @@ func TestGetUrlUpgrade(t *testing.T) {
 	urlKey := "uJ47NPeT7qjLa11gL3sVHqw"
 	versionCode := 1
 	appointVersionCode := 0
-	devModelKey := "android.os.Build.MODEL"
-	devKey := "android.os.Build.FINGERPRINT"
+	devModelKey := ""
+	devKey := ""
 
 	// 接口调用
 	request := &client.UrlUpgradeRequest{
@@ -61,8 +61,8 @@ func TestGetFileUpgrade(t *testing.T) {
 	fileKey := "filekey1"
 	versionCode := 1
 	appointVersionCode := 0
-	devModelKey := "tv1"
-	devKey := "macmacmacmac"
+	devModelKey := ""
+	devKey := ""
 
 	// 接口调用
 	request := &client.FileUpgradeRequest{

@@ -10,9 +10,6 @@
 ## 版本
 > - 当前版本: v1.0.3
 
-## 运行环境
-> - Go 1.5及以上。
-
 ## 安装方法
 ### GitHub安装
 > - 执行命令`go get github.com/toolsetlink/upgradelink-api-go`获取远程代码包。

@@ -19,7 +19,7 @@ func TestGetUrlUpgrade(t *testing.T) {
 		return
 	}
 
-	urlKey := "uJ47NPeT7qjLa11gL3sVHqw"
+	urlKey := "uJ47NPeT7qjLa1gL3sVHqw"
 	versionCode := 1
 	appointVersionCode := 0
 	devModelKey := ""
@@ -58,7 +58,7 @@ func TestGetFileUpgrade(t *testing.T) {
 		return
 	}
 
-	fileKey := "filekey1"
+	fileKey := "LOYlLXNy7wV3ySuh0XgtSg"
 	versionCode := 1
 	appointVersionCode := 0
 	devModelKey := ""

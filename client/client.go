@@ -288,12 +288,273 @@ func (s *FileUpgradeResponse) SetData(v *FileUpgradeDataResponse) *FileUpgradeRe
   return s
 }
 
+type ApkUpgradeRequest struct {
+  ApkKey *string `json:"apkKey,omitempty" xml:"apkKey,omitempty" require:"true"`
+  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
+  AppointVersionCode *int `json:"appointVersionCode,omitempty" xml:"appointVersionCode,omitempty" require:"true"`
+  DevModelKey *string `json:"devModelKey,omitempty" xml:"devModelKey,omitempty" require:"true"`
+  DevKey *string `json:"devKey,omitempty" xml:"devKey,omitempty" require:"true"`
+}
+
+func (s ApkUpgradeRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApkUpgradeRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ApkUpgradeRequest) SetApkKey(v string) *ApkUpgradeRequest {
+  s.ApkKey = &v
+  return s
+}
+
+func (s *ApkUpgradeRequest) SetVersionCode(v int) *ApkUpgradeRequest {
+  s.VersionCode = &v
+  return s
+}
+
+func (s *ApkUpgradeRequest) SetAppointVersionCode(v int) *ApkUpgradeRequest {
+  s.AppointVersionCode = &v
+  return s
+}
+
+func (s *ApkUpgradeRequest) SetDevModelKey(v string) *ApkUpgradeRequest {
+  s.DevModelKey = &v
+  return s
+}
+
+func (s *ApkUpgradeRequest) SetDevKey(v string) *ApkUpgradeRequest {
+  s.DevKey = &v
+  return s
+}
+
+type ApkUpgradeDataResponse struct {
+  ApkKey *string `json:"apkKey,omitempty" xml:"apkKey,omitempty" require:"true"`
+  PackageName *string `json:"packageName,omitempty" xml:"packageName,omitempty" require:"true"`
+  VersionName *string `json:"versionName,omitempty" xml:"versionName,omitempty" require:"true"`
+  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
+  UrlPath *string `json:"urlPath,omitempty" xml:"urlPath,omitempty" require:"true"`
+  UrlFileSize *int `json:"urlFileSize,omitempty" xml:"urlFileSize,omitempty" require:"true"`
+  UrlFileMd5 *string `json:"urlFileMd5,omitempty" xml:"urlFileMd5,omitempty" require:"true"`
+  UpgradeType *int `json:"upgradeType,omitempty" xml:"upgradeType,omitempty" require:"true"`
+  PromptUpgradeContent *string `json:"promptUpgradeContent,omitempty" xml:"promptUpgradeContent,omitempty" require:"true"`
+}
+
+func (s ApkUpgradeDataResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApkUpgradeDataResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ApkUpgradeDataResponse) SetApkKey(v string) *ApkUpgradeDataResponse {
+  s.ApkKey = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetPackageName(v string) *ApkUpgradeDataResponse {
+  s.PackageName = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetVersionName(v string) *ApkUpgradeDataResponse {
+  s.VersionName = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetVersionCode(v int) *ApkUpgradeDataResponse {
+  s.VersionCode = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetUrlPath(v string) *ApkUpgradeDataResponse {
+  s.UrlPath = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetUrlFileSize(v int) *ApkUpgradeDataResponse {
+  s.UrlFileSize = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetUrlFileMd5(v string) *ApkUpgradeDataResponse {
+  s.UrlFileMd5 = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetUpgradeType(v int) *ApkUpgradeDataResponse {
+  s.UpgradeType = &v
+  return s
+}
+
+func (s *ApkUpgradeDataResponse) SetPromptUpgradeContent(v string) *ApkUpgradeDataResponse {
+  s.PromptUpgradeContent = &v
+  return s
+}
+
+type ApkUpgradeResponse struct {
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  TraceId *string `json:"traceId,omitempty" xml:"traceId,omitempty" require:"true"`
+  Data *ApkUpgradeDataResponse `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ApkUpgradeResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApkUpgradeResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ApkUpgradeResponse) SetCode(v int) *ApkUpgradeResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ApkUpgradeResponse) SetMsg(v string) *ApkUpgradeResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ApkUpgradeResponse) SetTraceId(v string) *ApkUpgradeResponse {
+  s.TraceId = &v
+  return s
+}
+
+func (s *ApkUpgradeResponse) SetData(v *ApkUpgradeDataResponse) *ApkUpgradeResponse {
+  s.Data = v
+  return s
+}
+
+type ConfigurationUpgradeRequest struct {
+  ConfigurationKey *string `json:"configurationKey,omitempty" xml:"configurationKey,omitempty" require:"true"`
+  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
+  AppointVersionCode *int `json:"appointVersionCode,omitempty" xml:"appointVersionCode,omitempty" require:"true"`
+  DevModelKey *string `json:"devModelKey,omitempty" xml:"devModelKey,omitempty" require:"true"`
+  DevKey *string `json:"devKey,omitempty" xml:"devKey,omitempty" require:"true"`
+}
+
+func (s ConfigurationUpgradeRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConfigurationUpgradeRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ConfigurationUpgradeRequest) SetConfigurationKey(v string) *ConfigurationUpgradeRequest {
+  s.ConfigurationKey = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeRequest) SetVersionCode(v int) *ConfigurationUpgradeRequest {
+  s.VersionCode = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeRequest) SetAppointVersionCode(v int) *ConfigurationUpgradeRequest {
+  s.AppointVersionCode = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeRequest) SetDevModelKey(v string) *ConfigurationUpgradeRequest {
+  s.DevModelKey = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeRequest) SetDevKey(v string) *ConfigurationUpgradeRequest {
+  s.DevKey = &v
+  return s
+}
+
+type ConfigurationUpgradeDataResponse struct {
+  ConfigurationKey *string `json:"configurationKey,omitempty" xml:"configurationKey,omitempty" require:"true"`
+  VersionName *string `json:"versionName,omitempty" xml:"versionName,omitempty" require:"true"`
+  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
+  UpgradeType *int `json:"upgradeType,omitempty" xml:"upgradeType,omitempty" require:"true"`
+  PromptUpgradeContent *string `json:"promptUpgradeContent,omitempty" xml:"promptUpgradeContent,omitempty" require:"true"`
+  Content interface{} `json:"content,omitempty" xml:"content,omitempty" require:"true"`
+}
+
+func (s ConfigurationUpgradeDataResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConfigurationUpgradeDataResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetConfigurationKey(v string) *ConfigurationUpgradeDataResponse {
+  s.ConfigurationKey = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetVersionName(v string) *ConfigurationUpgradeDataResponse {
+  s.VersionName = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetVersionCode(v int) *ConfigurationUpgradeDataResponse {
+  s.VersionCode = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetUpgradeType(v int) *ConfigurationUpgradeDataResponse {
+  s.UpgradeType = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetPromptUpgradeContent(v string) *ConfigurationUpgradeDataResponse {
+  s.PromptUpgradeContent = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeDataResponse) SetContent(v interface{}) *ConfigurationUpgradeDataResponse {
+  s.Content = v
+  return s
+}
+
+type ConfigurationUpgradeResponse struct {
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  TraceId *string `json:"traceId,omitempty" xml:"traceId,omitempty" require:"true"`
+  Data *ConfigurationUpgradeDataResponse `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ConfigurationUpgradeResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConfigurationUpgradeResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ConfigurationUpgradeResponse) SetCode(v int) *ConfigurationUpgradeResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeResponse) SetMsg(v string) *ConfigurationUpgradeResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeResponse) SetTraceId(v string) *ConfigurationUpgradeResponse {
+  s.TraceId = &v
+  return s
+}
+
+func (s *ConfigurationUpgradeResponse) SetData(v *ConfigurationUpgradeDataResponse) *ConfigurationUpgradeResponse {
+  s.Data = v
+  return s
+}
+
 type AppReportRequest struct {
   EventType *string `json:"eventType,omitempty" xml:"eventType,omitempty" require:"true"`
-  DevModelKey *string `json:"devModelKey,omitempty" xml:"devModelKey,omitempty"`
-  DevKey *string `json:"devKey,omitempty" xml:"devKey,omitempty"`
   AppKey *string `json:"appKey,omitempty" xml:"appKey,omitempty" require:"true"`
-  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   EventData *AppReportRequestEventData `json:"eventData,omitempty" xml:"eventData,omitempty" require:"true" type:"Struct"`
 }
@@ -311,23 +572,8 @@ func (s *AppReportRequest) SetEventType(v string) *AppReportRequest {
   return s
 }
 
-func (s *AppReportRequest) SetDevModelKey(v string) *AppReportRequest {
-  s.DevModelKey = &v
-  return s
-}
-
-func (s *AppReportRequest) SetDevKey(v string) *AppReportRequest {
-  s.DevKey = &v
-  return s
-}
-
 func (s *AppReportRequest) SetAppKey(v string) *AppReportRequest {
   s.AppKey = &v
-  return s
-}
-
-func (s *AppReportRequest) SetVersionCode(v int) *AppReportRequest {
-  s.VersionCode = &v
   return s
 }
 
@@ -343,9 +589,14 @@ func (s *AppReportRequest) SetEventData(v *AppReportRequestEventData) *AppReport
 
 type AppReportRequestEventData struct {
   LaunchTime *string `json:"launchTime,omitempty" xml:"launchTime,omitempty"`
-  Code *int `json:"code,omitempty" xml:"code,omitempty"`
+  VersionCode *int `json:"versionCode,omitempty" xml:"versionCode,omitempty" require:"true"`
+  DevModelKey *string `json:"devModelKey,omitempty" xml:"devModelKey,omitempty"`
+  DevKey *string `json:"devKey,omitempty" xml:"devKey,omitempty"`
+  Target *string `json:"target,omitempty" xml:"target,omitempty"`
+  Arch *string `json:"arch,omitempty" xml:"arch,omitempty"`
   DownloadVersionCode *int `json:"downloadVersionCode,omitempty" xml:"downloadVersionCode,omitempty"`
   UpgradeVersionCode *int `json:"upgradeVersionCode,omitempty" xml:"upgradeVersionCode,omitempty"`
+  Code *int `json:"code,omitempty" xml:"code,omitempty"`
 }
 
 func (s AppReportRequestEventData) String() string {
@@ -361,8 +612,28 @@ func (s *AppReportRequestEventData) SetLaunchTime(v string) *AppReportRequestEve
   return s
 }
 
-func (s *AppReportRequestEventData) SetCode(v int) *AppReportRequestEventData {
-  s.Code = &v
+func (s *AppReportRequestEventData) SetVersionCode(v int) *AppReportRequestEventData {
+  s.VersionCode = &v
+  return s
+}
+
+func (s *AppReportRequestEventData) SetDevModelKey(v string) *AppReportRequestEventData {
+  s.DevModelKey = &v
+  return s
+}
+
+func (s *AppReportRequestEventData) SetDevKey(v string) *AppReportRequestEventData {
+  s.DevKey = &v
+  return s
+}
+
+func (s *AppReportRequestEventData) SetTarget(v string) *AppReportRequestEventData {
+  s.Target = &v
+  return s
+}
+
+func (s *AppReportRequestEventData) SetArch(v string) *AppReportRequestEventData {
+  s.Arch = &v
   return s
 }
 
@@ -373,6 +644,11 @@ func (s *AppReportRequestEventData) SetDownloadVersionCode(v int) *AppReportRequ
 
 func (s *AppReportRequestEventData) SetUpgradeVersionCode(v int) *AppReportRequestEventData {
   s.UpgradeVersionCode = &v
+  return s
+}
+
+func (s *AppReportRequestEventData) SetCode(v int) *AppReportRequestEventData {
+  s.Code = &v
   return s
 }
 
@@ -595,6 +871,166 @@ func (client *Client) FileUpgrade(request *FileUpgradeRequest) (_result *FileUpg
       }
 
       _result = &FileUpgradeResponse{}
+      _err = tea.Convert(tea.ToMap(result), &_result)
+      return _result, _err
+    }()
+    if !tea.BoolValue(tea.Retryable(_err)) {
+      break
+    }
+  }
+
+  return _resp, _err
+}
+
+func (client *Client) ApkUpgrade(request *ApkUpgradeRequest) (_result *ApkUpgradeResponse, _err error) {
+  _err = tea.Validate(request)
+  if _err != nil {
+    return _result, _err
+  }
+  _runtime := map[string]interface{}{
+    "timeout": 10000,
+    // 10s 的过期时间
+  }
+
+  _resp := &ApkUpgradeResponse{}
+  for _retryTimes := 0; tea.BoolValue(tea.AllowRetry(_runtime["retry"], tea.Int(_retryTimes))); _retryTimes++ {
+    if _retryTimes > 0 {
+      _backoffTime := tea.GetBackoffTime(_runtime["backoff"], tea.Int(_retryTimes))
+      if tea.IntValue(_backoffTime) > 0 {
+        tea.Sleep(_backoffTime)
+      }
+    }
+
+    _resp, _err = func()(*ApkUpgradeResponse, error){
+      request_ := tea.NewRequest()
+      // 序列化请求体
+      bodyStr := util.ToJSONString(request)
+      // 生成请求参数
+      timestamp := darabonbabase.TimeRFC3339()
+      nonce := darabonbabase.GenerateNonce()
+      uri := tea.String("/v1/apk/upgrade")
+      accessKey := client.AccessKey
+      accessSecret := client.AccessSecret
+      // 生成签名
+      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessSecret, timestamp, uri)
+      request_.Protocol = client.Protocol
+      request_.Method = tea.String("POST")
+      request_.Pathname = tea.String("/v1/apk/upgrade")
+      request_.Headers = map[string]*string{
+        "host": client.Endpoint,
+        "content-type": tea.String("application/json"),
+        "x-Timestamp": timestamp,
+        "x-Nonce": nonce,
+        "x-AccessKey": accessKey,
+        "x-Signature": signature,
+      }
+      request_.Body = tea.ToReader(bodyStr)
+      response_, _err := tea.DoRequest(request_, _runtime)
+      if _err != nil {
+        return _result, _err
+      }
+      assertAsMapTmp, err := util.ReadAsJSON(response_.Body)
+      if err != nil {
+        _err = err
+        return _result, _err
+      }
+      result, _err := util.AssertAsMap(assertAsMapTmp)
+      if _err != nil {
+        return _result, _err
+      }
+
+      if !tea.BoolValue(util.EqualNumber(response_.StatusCode, tea.Int(200))) {
+        _err = tea.NewSDKError(map[string]interface{}{
+          "statusCode": tea.ToString(tea.IntValue(response_.StatusCode)),
+          "code": tea.ToString(result["code"]),
+          "message": tea.ToString(result["msg"]),
+          "docs": tea.ToString(result["docs"]),
+          "traceId": tea.ToString(result["traceId"]),
+        })
+        return _result, _err
+      }
+
+      _result = &ApkUpgradeResponse{}
+      _err = tea.Convert(tea.ToMap(result), &_result)
+      return _result, _err
+    }()
+    if !tea.BoolValue(tea.Retryable(_err)) {
+      break
+    }
+  }
+
+  return _resp, _err
+}
+
+func (client *Client) ConfigurationUpgrade(request *ConfigurationUpgradeRequest) (_result *ConfigurationUpgradeResponse, _err error) {
+  _err = tea.Validate(request)
+  if _err != nil {
+    return _result, _err
+  }
+  _runtime := map[string]interface{}{
+    "timeout": 10000,
+    // 10s 的过期时间
+  }
+
+  _resp := &ConfigurationUpgradeResponse{}
+  for _retryTimes := 0; tea.BoolValue(tea.AllowRetry(_runtime["retry"], tea.Int(_retryTimes))); _retryTimes++ {
+    if _retryTimes > 0 {
+      _backoffTime := tea.GetBackoffTime(_runtime["backoff"], tea.Int(_retryTimes))
+      if tea.IntValue(_backoffTime) > 0 {
+        tea.Sleep(_backoffTime)
+      }
+    }
+
+    _resp, _err = func()(*ConfigurationUpgradeResponse, error){
+      request_ := tea.NewRequest()
+      // 序列化请求体
+      bodyStr := util.ToJSONString(request)
+      // 生成请求参数
+      timestamp := darabonbabase.TimeRFC3339()
+      nonce := darabonbabase.GenerateNonce()
+      uri := tea.String("/v1/configuration/upgrade")
+      accessKey := client.AccessKey
+      accessSecret := client.AccessSecret
+      // 生成签名
+      signature := darabonbabase.GenerateSignature(bodyStr, nonce, accessSecret, timestamp, uri)
+      request_.Protocol = client.Protocol
+      request_.Method = tea.String("POST")
+      request_.Pathname = tea.String("/v1/configuration/upgrade")
+      request_.Headers = map[string]*string{
+        "host": client.Endpoint,
+        "content-type": tea.String("application/json"),
+        "x-Timestamp": timestamp,
+        "x-Nonce": nonce,
+        "x-AccessKey": accessKey,
+        "x-Signature": signature,
+      }
+      request_.Body = tea.ToReader(bodyStr)
+      response_, _err := tea.DoRequest(request_, _runtime)
+      if _err != nil {
+        return _result, _err
+      }
+      assertAsMapTmp, err := util.ReadAsJSON(response_.Body)
+      if err != nil {
+        _err = err
+        return _result, _err
+      }
+      result, _err := util.AssertAsMap(assertAsMapTmp)
+      if _err != nil {
+        return _result, _err
+      }
+
+      if !tea.BoolValue(util.EqualNumber(response_.StatusCode, tea.Int(200))) {
+        _err = tea.NewSDKError(map[string]interface{}{
+          "statusCode": tea.ToString(tea.IntValue(response_.StatusCode)),
+          "code": tea.ToString(result["code"]),
+          "message": tea.ToString(result["msg"]),
+          "docs": tea.ToString(result["docs"]),
+          "traceId": tea.ToString(result["traceId"]),
+        })
+        return _result, _err
+      }
+
+      _result = &ConfigurationUpgradeResponse{}
       _err = tea.Convert(tea.ToMap(result), &_result)
       return _result, _err
     }()

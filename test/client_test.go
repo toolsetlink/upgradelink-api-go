@@ -424,19 +424,20 @@ func TestPostAppReport(t *testing.T) {
 		AccessKey:    &accessKey,
 		AccessSecret: &accessSecret,
 	}
+
 	Client, err := client.NewClient(&config)
 	if err != nil {
 		return
 	}
 
 	/* app_start 应用-启动事件 */
-	eventType := client.EventTypeAppStart
+	eventType := "app_start"
 	appKey := "LOYlLXNy7wV3ySuh0XgtSg"
 	target := "darwin"
 	arch := "x86_64"
 	devModelKey := ""
 	devKey := ""
-	versionCode := 1
+	versionCode := 0
 	timestamp := client.TimeRFC3339()
 
 	eventData := &client.AppReportRequestEventData{

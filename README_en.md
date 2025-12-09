@@ -1,4 +1,4 @@
-# UpgradeLink API Go SDK
+# UpgradeLink API SDK
 
 [English](README_en.md) | [中文](README.md)
 
@@ -8,11 +8,6 @@
 > - This Go SDK is built on the official API of [UpgradeLink](https://upgrade.toolsetlink.com/en/upgrade/api/api-docs.html).
 > - Suitable for various websites, development companies and developers.
 > - With this SDK, users can conveniently manage data in any application, at any time and from any location.
-
-## Installation
-### Install from GitHub
-> - Run the command `go get github.com/toolsetlink/upgradelink-api-go` to get the remote code package.
-> - Import the SDK package in your code using `import "github.com/toolsetlink/upgradelink-api-go"`.
 
 ## Usage Documentation
 > - [UpgradeLink SDK Documentation](https://upgrade.toolsetlink.com/en/upgrade/sdk/sdk.html)

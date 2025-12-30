@@ -464,3 +464,28 @@ func TestPostAppReport(t *testing.T) {
 		fmt.Println("info: ", Info)
 	}
 }
+
+// 获取应用统计信息
+func TestGetAppStatisticsInfo(t *testing.T) {
+
+	var config = client.Config{}
+	config.SetAccessKey("mui2W50H1j-OC4xD6PgQag")
+	config.SetAccessSecret("PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc")
+
+	Client, err := client.NewClient(&config)
+	if err != nil {
+		return
+	}
+
+	appKey := "kPUtUMDIjBhS48q5771pow"
+	// 接口调用
+	request := &client.AppStatisticsInfoRequest{
+		AppKey: &appKey,
+	}
+	Info, err := Client.AppStatisticsInfo(request)
+	if err != nil {
+		fmt.Println("err: ", err)
+	} else {
+		fmt.Println("info: ", Info)
+	}
+}

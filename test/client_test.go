@@ -348,10 +348,14 @@ func TestGetWinUpgrade(t *testing.T) {
 
 	accessKey := "mui2W50H1j-OC4xD6PgQag"
 	accessSecret := "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc"
+	protocol := "HTTP"
+	endpoint := "0.0.0.0:8888"
 
 	var config = client.Config{
 		AccessKey:    &accessKey,
 		AccessSecret: &accessSecret,
+		Protocol:     &protocol,
+		Endpoint:     &endpoint,
 	}
 
 	Client, err := client.NewClient(&config)
